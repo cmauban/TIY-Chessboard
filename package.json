@@ -13,8 +13,9 @@
     "mocha": "^2.3.3"
   },
   "scripts": {
-    "test": "mocha --bail",
+    "test": "mocha",
     "start": "browser-sync --server --directory --files='tests.html'",
+    "sass": "node-sass scss/main.scss --output css/"
   },
   "repository": {
     "type": "git",
