@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "mocha --bail",
-    "start": "browser-sync --server --directory --files='tests.html'"
+    "start": "browser-sync --server --directory --files='tests.html'",
   },
   "repository": {
     "type": "git",
