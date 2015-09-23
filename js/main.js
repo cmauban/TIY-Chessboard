@@ -1,3 +1,6 @@
+var test = require('mocha').it,
+  expect = require('chai').expect;
+
 (function(globals){
 // Don't worry if that seems a little funky...
 
