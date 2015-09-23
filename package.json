@@ -1,0 +1,29 @@
+{
+  "name": "tiy-chessboard",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "chai": "^3.3.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3"
+  },
+  "scripts": {
+    "test": "mocha --bail",
+    "start": "browser-sync --server --directory --files='tests.html'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmauban/TIY-Chessboard.git"
+  },
+  "author": "camillemauban",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cmauban/TIY-Chessboard/issues"
+  },
+  "homepage": "https://github.com/cmauban/TIY-Chessboard#readme"
+}
