@@ -10,6 +10,7 @@ var test = ('mocha').it,
     // expect(game.board("zero")).to.equal();
 });
 
+//data collected from game
 
 
 // What kind of thing is game.board...? What does it do?

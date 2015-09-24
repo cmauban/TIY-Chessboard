@@ -1,7 +1,11 @@
-var test = require('mocha').it,
-  expect = require('chai').expect;
+var test = ('mocha').it,
+  expect = ('chai').expect;
 
 (function(globals){
+})(window || module && module.exports || this);
+
+
+(function(globals){ //IIFE: immediately invoked function expression
 // Don't worry if that seems a little funky...
 
   /**
@@ -28,7 +32,8 @@ var test = require('mocha').it,
   // var current; TODO: do we need this?
 
   // You don't need to understand `globals` yet...
-  var game = globals.game = {
+  //globals is an object. globals.game is assigned a dictionary
+  var game = (globals.game = {
     /**
      * Provide a _copy_ of the game board in order to update the View from it
      *
@@ -85,13 +90,20 @@ var test = require('mocha').it,
      * @return {String} representation of `board`
      * @todo Refactor to use Array methods?
      */
+
+    //key:value
     tracer: function(){
       var bullet = '';
+      //creates a block of statements
+      for ( var rank = 0; rank < board.length; rank++ ){
+        console.log(rank, board[rank]);
+        console.log('tracer bullet');
+      }
 
       for ( var rank = 0; rank < board.length; rank++ ){
         bullet += '|';
         for ( var file = 0; file < board[rank].length; file++ ){
-          bullet += board[rank][file] || ' |';
+          bullet += board[rank][file] || ' ' ) + '|';
         }
         bullet += '\n';
       }
@@ -108,10 +120,10 @@ var test = require('mocha').it,
      *
      * @todo Fill me in! ...and remove this comment.
      */
-    function applyMove(from, to){
+    applyMove: function (from, to){
       // You should write something in here...
     } // END applyMove
-  }; // END game
+  }); // END game
 
   /**
    * Provide the initial state of the game board, useful for any game.
