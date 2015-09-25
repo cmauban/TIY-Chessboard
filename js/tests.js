@@ -6,20 +6,9 @@ var test = ('mocha').it,
 //       expect(initial([0,1])).to.be.a('N');
 
 console.log(game.tracer());
-// });
 
-function initial(){
-  return [
-    [ 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' ],
-    [ 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' ],
-    Array(8).fill(null),
-    Array(8).fill(null),
-    Array(8).fill(null),
-    Array(8).fill(null),
-    [ 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p' ],
-    [ 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' ],
-  ];
-}
+
+// });
 
 
 //data collected from game
