@@ -1,14 +1,26 @@
-console.log('tracer bullet!!!!!!');
-
 var test = ('mocha').it,
   expect = ('chai').expect;
 
-  test('initialize the board', function(){
+// test('initial', function(){
+//     expect(initial('R')).to.equal([0,0]);
+//       expect(initial([0,1])).to.be.a('N');
 
-    // expect(game.board).to.exist;
-    // expect(game.board).to.equal(false);
-    // expect(game.board("zero")).to.equal();
-});
+console.log(game.tracer());
+// });
+
+function initial(){
+  return [
+    [ 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' ],
+    [ 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' ],
+    Array(8).fill(null),
+    Array(8).fill(null),
+    Array(8).fill(null),
+    Array(8).fill(null),
+    [ 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p' ],
+    [ 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' ],
+  ];
+}
+
 
 //data collected from game
 

@@ -1,9 +1,6 @@
 var test = ('mocha').it,
   expect = ('chai').expect;
 
-(function(globals){
-})(window || module && module.exports || this);
-
 
 (function(globals){ //IIFE: immediately invoked function expression
 // Don't worry if that seems a little funky...
@@ -26,7 +23,7 @@ var test = ('mocha').it,
    * @var {Array} of...?
    */
   var moves = [
-    // TODO: Fill me in!
+    'd4', 'Nf6', 'c4', 'e6', 'g3', 'd5', 'Bg2', 'Be7', 'Nf3'
   ]; // END moves
 
   // var current; TODO: do we need this?
@@ -97,13 +94,13 @@ var test = ('mocha').it,
       //creates a block of statements
       for ( var rank = 0; rank < board.length; rank++ ){
         console.log(rank, board[rank]);
-        console.log('tracer bullet');
+        console.log('tracer function bullet');
       }
 
       for ( var rank = 0; rank < board.length; rank++ ){
         bullet += '|';
         for ( var file = 0; file < board[rank].length; file++ ){
-          bullet += board[rank][file] || ' ' ) + '|';
+          bullet += (board[rank][file] || ' ' ) + '|';
         }
         bullet += '\n';
       }
@@ -121,7 +118,9 @@ var test = ('mocha').it,
      * @todo Fill me in! ...and remove this comment.
      */
     applyMove: function (from, to){
-      // You should write something in here...
+       if ([] == from && [] == to) {
+        return undefined;
+      }
     } // END applyMove
   }); // END game
 
