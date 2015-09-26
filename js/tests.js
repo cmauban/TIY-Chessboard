@@ -6,6 +6,7 @@ var test = ('mocha').it,
 //       expect(initial([0,1])).to.be.a('N');
 
 console.log(game.tracer());
+console.log(game.board());
 
 
 // });
