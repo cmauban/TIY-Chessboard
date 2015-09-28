@@ -1,11 +1,7 @@
-var test = ('mocha').it,
-  expect = ('chai').expect;
-
-(function(globals){
+(function(globals){ // IIFE: Immediately Invoked Function Expression
 })(window || module && module.exports || this);
 
-
-(function(globals){ //IIFE: immediately invoked function expression
+(function(globals){ // IIFE: Immediately Invoked Function Expression
 // Don't worry if that seems a little funky...
 
   /**
@@ -26,13 +22,22 @@ var test = ('mocha').it,
    * @var {Array} of...?
    */
   var moves = [
-    // TODO: Fill me in!
+
+    [ [6,3], [0,6], [6,2], [1,4], [6,6], [1,3], [7,5], [0,5], [7,6] ],
+    [ [4,3], [2,5], [4,2], [2,4], [5,6], [3,3], [6,6], [1,4], [5,5] ]
+
   ]; // END moves
 
-  // var current; TODO: do we need this?
+  var from = moves[0];
+  var to = moves[1];
 
+    console.log(from[[0]], to[[0]]); //logging first value in both indexs
+
+var current = [];
+var counter = 0;
+
+    //globals is an object. globals.game is assigned a dictionary
   // You don't need to understand `globals` yet...
-  //globals is an object. globals.game is assigned a dictionary
   var game = (globals.game = {
     /**
      * Provide a _copy_ of the game board in order to update the View from it
@@ -61,7 +66,7 @@ var test = ('mocha').it,
      * @todo Make this work!
      */
     next: function(){
-      // Doesn't this seem to be missing something?
+      ++counter;
       return this;
     },
     /**
@@ -71,7 +76,7 @@ var test = ('mocha').it,
      * @todo Make this work!
      */
     prev: function(){
-      // Another good place for code...
+      --counter;
       return this;
     },
     /**
@@ -90,20 +95,19 @@ var test = ('mocha').it,
      * @return {String} representation of `board`
      * @todo Refactor to use Array methods?
      */
-
-    //key:value
+  //  key:value
     tracer: function(){
       var bullet = '';
       //creates a block of statements
       for ( var rank = 0; rank < board.length; rank++ ){
         console.log(rank, board[rank]);
-        console.log('tracer bullet');
+        console.log('tracer function bullet');
       }
 
-      for ( var rank = 0; rank < board.length; rank++ ){
+      for ( rank = 0; rank < board.length; rank++ ){
         bullet += '|';
         for ( var file = 0; file < board[rank].length; file++ ){
-          bullet += board[rank][file] || ' ' ) + '|';
+          bullet += (board[rank][file] || ' ') + '|';
         }
         bullet += '\n';
       }
@@ -118,11 +122,29 @@ var test = ('mocha').it,
      * @param {Object} to with `rank` and `file`
      * @return undefined
      *
-     * @todo Fill me in! ...and remove this comment.
+     * @todo Fill me in! .
+     ..and remove this comment.
      */
-    applyMove: function (from, to){
-      // You should write something in here...
-    } // END applyMove
+
+
+    applyMove: function(from, to){
+
+        // var current = board[4][3] = board[6][3];
+        // var last = board[6][3] = ' ';
+
+        // console.log(board.join('\n' + '|'));
+
+
+      var current = board[4][3] = board[6][3]; //new position is assigned to from position
+      var last = board[6][3] = ' '; //from position is assigned to empty string.
+
+      console.log(board.last.join('\n'));
+      // console.log(current[[0]], to[[0]]);
+      // console.log(applyMove[[0]][[0]]);
+
+
+
+    }// END applyMove
   }); // END game
 
   /**

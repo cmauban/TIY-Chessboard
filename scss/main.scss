@@ -94,22 +94,109 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+   .chessboard {
+     margin-left: auto;
+     margin-right: auto;
+   }
+
+   .border {
+     width: 40px;
+     height: 40px;
+     text-align: center;
+     background-color: #707070;
+     color: #000000;
+   }
+
+   .row-8, .row-7, .row-6, .row-5, .row-4, .row-3, .row-2, .row-1 {
+     height: 80px;
+     text-align: center;
+   }
+
+   .light, .dark {
+     width: 80px;
+   }
+
+   .light {
+     background: #DBDBDB;
+   }
+
+   .dark {
+     background: #72579C;
+   }
+
+
+
+   .bprook::before {
+     content: "\265c";
+     font-size: 40pt;
+   }
+
+   .bpknight::before {
+     content: "\265e";
+     font-size: 40pt;
+   }
+
+   .bpbishop::before {
+     content: "\265d";
+     font-size: 40pt;
+   }
+
+   .bpqueen::before {
+     content: "\265b";
+     font-size: 40pt;
+   }
+
+   .bpking::before {
+     content: "\265a";
+     font-size: 40pt;
+   }
+
+   .bppawn::before {
+     content: "\265f";
+     font-size: 40pt;
+   }
+
+
+   .wprook::before { /* WHITE PIECES START */
+     content: "\2656";
+     font-size: 40pt;
+   }
+
+   .wpknight::before {
+     content: "\2658";
+     font-size: 40pt;
+   }
+
+   .wpbishop::before {
+     content: "\2657";
+     font-size: 40pt;
+   }
+
+   .wpking::before {
+     content: "\2654";
+     font-size: 40pt;
+   }
+
+   .wpqueen::before {
+     content: "\2655";
+     font-size: 40pt;
+   }
+
+   .wppawn::before {
+     content: "\2659";
+     font-size: 40pt;
+   }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+   .buttons {
+     margin-left: auto;
+     margin-right: auto;
+     width: 11%;
+     color: gray;
+     border: 1px solid #000000;
+   }
 
 /* ==========================================================================
    Helper classes

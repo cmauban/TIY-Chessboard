@@ -15,139 +15,160 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
-      <table>
-        <tr height="40" align="center"> <!---TOP BORDER ROW---->
-          <td bgcolor="#FF5252" width="40"></td>
-          <td width="40" bgcolor="#FF5252">A</td>
-          <td width="40" bgcolor="#FF5252">B</td>
-          <td width="40" bgcolor="#FF5252">C</td>
-          <td width="40" bgcolor="#FF5252">D</td>
-          <td width="40" bgcolor="#FF5252">E</td>
-          <td width="40" bgcolor="#FF5252">F</td>
-          <td width="40" bgcolor="#FF5252">G</td>
-          <td width="40" bgcolor="#FF5252">H</td>
-          <td bgcolor="#FF5252" width="40"></td>
+
+      <tbody>
+      <table class="chessboard">
+        <section>
+        <tr class="border"> <!---TOP BORDER ROW---->
+          <td bgcolor="#707070" width="40"></td>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+          <td>D</td>
+          <td>E</td>
+          <td>F</td>
+          <td>G</td>
+          <td>H</td>
+          <td bgcolor="#707070" width="40"></td>
         </tr>
-        <tr height="80" align="center"> <!---ROW 1 OF CHESSBOARD---->
-          <td bgcolor="#FF5252">8</td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td bgcolor="#FF5252" width="40">8</td>
+      </section>
+      <section class="board">
+        <tr class="row-8"> <!---ROW 8 OF CHESSBOARD---->
+          <td bgcolor="#707070">8</td>
+          <td id="A8" class="light bprook"></td>
+          <td id="B8" class="dark bpknight"></td>
+          <td id="C8" class="light bpbishop"></td>
+          <td id="D8" class="dark bpqueen"></td>
+          <td id="E8" class="light bpking"></td>
+          <td id="F8" class="dark bpbishop"></td>
+          <td id="G8" class="light bpknight"></td>
+          <td id="H8" class="dark bprook"></td>
+          <td bgcolor="#707070" width="40">8</td>
         </tr>
-        <tr height="80" align="center"> <!---ROW 2---->
-          <td bgcolor="#FF5252">7</td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td bgcolor="#FF5252" width="40">7</td>
+      </section>
+      <section class="board">
+        <tr class="row-7"> <!---ROW 7---->
+          <td bgcolor="#707070">7</td>
+          <td id="A7" class="dark bppawn"></td>
+          <td id="B7" class="light bppawn"></td>
+          <td id="C7" class="dark bppawn"></td>
+          <td id="D7" class="light bppawn"></td>
+          <td id="E7" class="dark bppawn"></td>
+          <td id="F7" class="light bppawn"></td>
+          <td id="G7" class="dark bppawn"></td>
+          <td id="H7" class="light bppawn"></td>
+          <td bgcolor="#707070" width="40">7</td>
         </tr>
-        <tr height="80" align="center" >
-          <td bgcolor="#FF5252">6</td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td bgcolor="#FF5252" width="40">6</td>
+      </section>
+      <section class="board">
+        <tr class="row-6"> <!---ROW 6 OF CHESSBOARD---->
+          <td bgcolor="#707070">6</td>
+          <td id="A6" class="light"></td>
+          <td id="B6" class="dark"></td>
+          <td id="C6" class="light"></td>
+          <td id="D6" class="dark"></td>
+          <td id="E6" class="light"></td>
+          <td id="F6" class="dark"></td>
+          <td id="G6" class="light"></td>
+          <td id="H6" class="dark"></td>
+          <td bgcolor="#707070" width="40">6</td>
         </tr>
-        <tr height="80" align="center">
-          <td bgcolor="#FF5252">5</td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td bgcolor="#FF5252" width="40">5</td>
+        </section>
+        <section class="board">
+        <tr class="row-5">
+          <td bgcolor="#707070">5</td>
+          <td id="A5" class="dark"></td>
+          <td id="B5"class="light"></td>
+          <td id="C5" class="dark"></td>
+          <td id="D5" class="light"></td>
+          <td id="E5" class="dark"></td>
+          <td id="F5" class="light"></td>
+          <td id="G5" class="dark"></td>
+          <td id="H5" class="light"></td>
+          <td bgcolor="#707070" width="40">5</td>
         </tr>
-        <tr height="80" align="center">
-          <td bgcolor="#FF5252">4</td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td bgcolor="#FF5252" width="40">4</td>
+        </section>
+        <section class="board">
+        <tr class="row-4">
+          <td bgcolor="#707070">4</td>
+          <td id="A4" class="light"></td>
+          <td id="B4" class="dark"></td>
+          <td id="C4" class="light"></td>
+          <td id="D4" class="dark"></td>
+          <td id="E4" class="light"></td>
+          <td id="F4" class="dark"></td>
+          <td id="G4" class="light"></td>
+          <td id="H4" class="dark"></td>
+          <td bgcolor="#707070" width="40">4</td>
         </tr>
-        <tr height="80" align="center">
-          <td bgcolor="#FF5252">3</td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td bgcolor="#FF5252" width="40">3</td>
+        </section>
+        <section class="board">
+        <tr class="row-3">
+          <td bgcolor="#707070">3</td>
+          <td id="A3" class="dark"></td>
+          <td id="B3" class="light"></td>
+          <td id="C3" class="dark"></td>
+          <td id="D3" class="light"></td>
+          <td id="E3" class="dark"></td>
+          <td id="F3" class="light"></td>
+          <td id="G3" class="dark"></td>
+          <td id="H3" class="light"></td>
+          <td bgcolor="#707070" width="40">3</td>
         </tr>
-        <tr height="80" align="center">
-          <td bgcolor="#FF5252">2</td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td bgcolor="#FF5252" width="40">2</td>
+        </section>
+        <section class="board">
+        <tr class="row-2">
+          <td bgcolor="#707070">2</td>
+          <td id="A2" class="light wppawn"></td>
+          <td id="B2" class="dark wppawn"></td>
+          <td id="C2" class="light wppawn"></td>
+          <td id="D2" class="dark wppawn"></td>
+          <td id="E2" class="light wppawn"></td>
+          <td id="F2" class="dark wppawn"></td>
+          <td id="G2" class="light wppawn"></td>
+          <td id="H2" class="dark wppawn"></td>
+          <td bgcolor="#707070" width="40">2</td>
         </tr>
-        <tr height="80" align="center">
-          <td bgcolor="#FF5252">1</td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td width="80" bgcolor="#000000"></td>
-          <td width="80" bgcolor="#DBDBDB"></td>
-          <td bgcolor="#FF5252" width="40">1</td>
+        </section>
+        <section class="board">
+        <tr class="row-1">
+          <td bgcolor="#707070">1</td>
+          <td id="A1" class="dark wprook"></td>
+          <td id="B1" class="light wpknight"></td>
+          <td id="C1" class="dark wpbishop"></td>
+          <td id="D1" class="light wpking"></td>
+          <td id="E1" class="dark wpqueen"></td>
+          <td id="F1" class="light wpbishop"></td>
+          <td id="G1" class="dark wpknight"></td>
+          <td id="H1" class="light wprook"></td>
+          <td bgcolor="#707070" width="40">1</td>
         </tr>
-        <tr height="40" align="center"> <!---BOTTOM BORDER ROW---->
-          <td bgcolor="#FF5252"></td>
-          <td width="40" bgcolor="#FF5252">A</td>
-          <td width="40" bgcolor="#FF5252">B</td>
-          <td width="40" bgcolor="#FF5252">C</td>
-          <td width="40" bgcolor="#FF5252">D</td>
-          <td width="40" bgcolor="#FF5252">E</td>
-          <td width="40" bgcolor="#FF5252">F</td>
-          <td width="40" bgcolor="#FF5252">G</td>
-          <td width="40" bgcolor="#FF5252">H</td>
-          <td bgcolor="#FF5252" width="40"></td>
+        </section>
+        <tr class="border"> <!---BOTTOM BORDER ROW---->
+          <td bgcolor="#707070"></td>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+          <td>D</td>
+          <td>E</td>
+          <td>F</td>
+          <td>G</td>
+          <td>H</td>
+          <td bgcolor="#707070" width="40"></td>
         </tr>
-        <tr height="40" align="center"> <!-- BUTTON ROW remove this. add button tags -->
-          <td width="40"></td>
-          <td width="40"></td>
-          <td width="40"><i class="fa fa-backward fa-1"></i></td>
-          <td width="40"><i class="fa fa-step-backward"></i></td>
-          <td width="40"><i class="fa fa-play"></i></td>
-          <td width="40"><i class="fa fa-pause"></i></td>
-          <td width="40"><i class="fa fa-step-forward"></i></td>
-          <td width="40"><i class="fa fa-fast-forward"></i></td>
-          <td width="40"></td>
-          <td width="40"></td>
-        </tr>
+      </tbody>
+
+        <tfoot>
+          <section class="buttons">
+          <button><i class="fa fa-backward"></i></button>
+          <button><i class="fa fa-step-backward"></i></button>
+          <button><i class="fa fa-play"></i></button>
+          <button><i class="fa fa-step-forward"></i></button>
+          <button><i class="fa fa-fast-forward"></i></button>
+        </section>
+        </tfoot>
+
+
       </table>
 
 
@@ -162,6 +183,7 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/controllers.js"></script>
 
 
         <!-- Google Analytics: change UA-     -  to be your site's ID. -->

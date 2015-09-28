@@ -1,14 +1,16 @@
-console.log('tracer bullet!!!!!!');
-
 var test = ('mocha').it,
   expect = ('chai').expect;
 
-  test('initialize the board', function(){
+// test('initial', function(){
+//     expect(initial('R')).to.equal([0,0]);
+//       expect(initial([0,1])).to.be.a('N');
 
-    // expect(game.board).to.exist;
-    // expect(game.board).to.equal(false);
-    // expect(game.board("zero")).to.equal();
-});
+console.log(game.tracer());
+console.log(game.board());
+
+
+// });
+
 
 //data collected from game
 
