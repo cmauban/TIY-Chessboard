@@ -24,7 +24,7 @@
       alert('next move');
 
     // TODO: Tell the Model -- `game` -- to advance to the next move...
-      
+      game.moves();
     // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
   });
 
