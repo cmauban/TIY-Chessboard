@@ -24,8 +24,9 @@
       alert('next move');
 
     // TODO: Tell the Model -- `game` -- to advance to the next move...
-      game.moves();
+      game.applyMove();
     // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
+      $('#D2') = $('#D4');
   });
 
   // Controller for "previous move"...
@@ -54,4 +55,4 @@
   });
 
 // Am I supposed to recognize this?
-})(window || module && module.exports || this)
+})(window || module && module.exports || this);

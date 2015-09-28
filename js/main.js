@@ -33,6 +33,8 @@
 
     console.log(from[[0]], to[[0]]); //logging first value in both indexs
 
+var current = {};
+var count = 0;
 // var current = board.moves[0];
 // var current = board.moves[1] = board.moves[0]; //assigning current, the new move to the new location
 
