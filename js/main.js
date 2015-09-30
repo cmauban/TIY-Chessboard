@@ -23,8 +23,13 @@
    */
   var moves = [
 
-    [ [6,3], [0,6], [6,2], [1,4], [6,6], [1,3], [7,5], [0,5], [7,6] ],
-    [ [4,3], [2,5], [4,2], [2,4], [5,6], [3,3], [6,6], [1,4], [5,5] ]
+    { from: { rank: number, file: number },
+      to: { rank: numbe, file: number }
+    }
+
+
+    // [ [6,3], [0,6], [6,2], [1,4], [6,6], [1,3], [7,5], [0,5], [7,6] ], //from locations
+    // [ [4,3], [2,5], [4,2], [2,4], [5,6], [3,3], [6,6], [1,4], [5,5] ] //to locations
 
   ]; // END moves
 
@@ -34,7 +39,7 @@
     console.log(from[[0]], to[[0]]); //logging first value in both indexs
 
 var current = [];
-var counter = 0;
+var counter = 0; //initial start
 
     //globals is an object. globals.game is assigned a dictionary
   // You don't need to understand `globals` yet...
@@ -58,6 +63,7 @@ var counter = 0;
       board = initial();
 
       return this;
+
     },
     /**
      * Advance the internal game board to the next move.
@@ -129,18 +135,18 @@ var counter = 0;
 
     applyMove: function(from, to){
 
-        // var current = board[4][3] = board[6][3];
-        // var last = board[6][3] = ' ';
+      board[to[counter][0]] = board[from[counter][0]];
+      board[from[counter][0]] = ' ';
+      console.log(board.join ('\n' + '|'));
 
-        // console.log(board.join('\n' + '|'));
 
 
-      var current = board[4][3] = board[6][3]; //new position is assigned to from position
-      var last = board[6][3] = ' '; //from position is assigned to empty string.
-
-      console.log(board.last.join('\n'));
-      // console.log(current[[0]], to[[0]]);
-      // console.log(applyMove[[0]][[0]]);
+      // var current = board[4][3] = board[6][3]; //new position is assigned to from position
+      // var last = board[6][3] = ' '; //from position is assigned to empty string.
+      //
+      // console.log(board.last.join('\n'));
+      // // console.log(current[[0]], to[[0]]);
+      // // console.log(applyMove[[0]][[0]]);
 
 
 

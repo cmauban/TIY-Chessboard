@@ -20,7 +20,7 @@
 
 
   // Controller for "next move"...
-  jQuery('.fa-step-forward').on('click', function(event){
+  jQuery('#next').on('click', function(event){
       alert('next move');
 
     // TODO: Tell the Model -- `game` -- to advance to the next move...
@@ -30,7 +30,7 @@
   });
 
   // Controller for "previous move"...
-  jQuery('.fa-step-backward').on('click', function(event){
+  jQuery('#previous').on('click', function(event){
       alert('previous move');
     // TODO: Fire tracer bullet!
     // TODO: Tell the Model -- `game` -- to advance to the previous move...
@@ -38,7 +38,7 @@
   });
 
   // Controller for "fast-forward"...
-  jQuery('.fa-fast-forward').on('click', function(event){
+  jQuery('#fast-forward').on('click', function(event){
       alert('fast-forward');
     // TODO: Fire tracer bullet!
     // TODO: Tell the Model -- `game` -- to advance to the last move...
@@ -46,7 +46,7 @@
   });
 
   // Controller for anything else...
-  jQuery('.fa-backward').on('click', function(event){
+  jQuery('#reset').on('click', function(event){
     // Fire tracer bullet!
       alert('backward');
     // TODO: Tell the Model -- `game` -- to do something it knows how to do...
