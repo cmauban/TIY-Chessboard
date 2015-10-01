@@ -25,18 +25,17 @@
 
     { from: { rank: 6, file: 3 },
       to: { rank: 4, file: 3 }
+    },
+
+    { from: { rank: 0, file: 6 },
+      to: { rank: 2, file: 5 }
     }
-
-
 
     // [ [6,3], [0,6], [6,2], [1,4], [6,6], [1,3], [7,5], [0,5], [7,6] ], //from locations
     // [ [4,3], [2,5], [4,2], [2,4], [5,6], [3,3], [6,6], [1,4], [5,5] ] //to locations
 
   ]; // END moves
 
-  var rank = moves[0].value;
-  // var from = moves[0];
-  // var to = moves[1];
 
     // console.log(from[[0]], to[[0]]); //logging first value in both indexs
 
@@ -51,7 +50,7 @@
      *
      * @return {Array} of {Array} of {String|null}
      */
-    board: function(){
+    board: function(){ //defines game.board
       return board.map(function(row){
         return row.slice();
       });
@@ -61,10 +60,10 @@
      *
      * @return {Object} the game object for Method Chaining
      */
-    reset: function(){
-      board = initial();
+    reset: function(){ //the reset object belongs to the game object
+      board = initial(); //just board
 
-      return this;
+      return this; //the object the function belongs too (game)
 
     },
     /**
@@ -74,8 +73,17 @@
      * @todo Make this work!
      */
     next: function(){
-      ++counter;
+    var counter = 0;
+    var currentFrom = moves[0].from;
+    var currentTo = moves[0].to;
+
+    if (counter < moves.length) {
+      counter += 1;
+      currentFrom = moves[counter].from;
+      currentTo = moves[counter].to;
+
       return this;
+      }
     },
     /**
      * Advance the internal game board to the previous move.
@@ -137,17 +145,14 @@
 
     applyMove: function(from, to){
 
-      moves[0].to = moves[0].from;
-      moves[0].from = null;
+      board[4][3] = board[6][3];
+      board[6][3] = null;
 
-        return moves[0].to;
+      // board[2][5] = board[0][6];
+      // board[0][6] = null;
 
-        // board[rank.to][file.to] = board[from.rank][from.file];
-        // board[from.rank][from.file] = null;
-
-        // console.log(moves[0].to);
-      console.log(board.join ('\n' + '|'));
-      return board.join('\n' + '|');
+      // console.log(board.join ('\n' + '|'));
+      // return board.join('\n' + '|');
 
 
 
