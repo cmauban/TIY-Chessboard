@@ -1,11 +1,4 @@
-// var test = ('mocha').it,
-//   expect = ('chai').expect;
-//
-//
-//
-// console.log(game.tracer());
-// console.log(game.board());
-
+console.log(game.tracer());
 
 (function(globals) {
 
@@ -18,6 +11,7 @@
 
 
   it('should give me a big array as the board', function () {
+
     var board = game.board();
 
     chai.expect(board).to.be.an('array');
@@ -26,6 +20,7 @@
     chai.expect(board[0][0]).to.be.a('string');
     chai.expect(board[0][0]).to.equal('R');
   });
+
 
   it('should be able to move pieces', function () {
     // board[0][0] = board[0][1];
@@ -37,13 +32,21 @@
     );
 
     var board = game.board();
+    // chai.expect(board[4][3]).to.be.equal('p');
+    // chai.expect(moves[0].from.rank).to.equal(6);
 
-    chai.expect(board[6][3]).to.be.equal(null);
-    chai.expect(board[4][3]).to.be.equal('p');
+    // chai.expect(game.applyMove()).to.deep.equal({rank: 6, file: 3});
+  });
+
+  it('should be able to assign the from piece to null', function() {
+    chai.expect(game.applyMove()).to.deep.equal(null);
+  });
 
 
-});
-
+  it('should be able to apply the move', function() {
+    chai.expect(game.board()).to.be.an('array');
+    chai.expect(game.board([4][3])).to.equal('p');
+  });
 
 // it('should be able to fast forward', function () {
 //   board[0][0] = board[0][1];

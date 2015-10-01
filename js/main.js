@@ -23,8 +23,8 @@
    */
   var moves = [
 
-    { from: { rank: number, file: number },
-      to: { rank: numbe, file: number }
+    { from: { rank: 6, file: 3 },
+      to: { rank: 4, file: 3 }
     }
 
 
@@ -33,13 +33,14 @@
 
   ]; // END moves
 
-  var from = moves[0];
-  var to = moves[1];
 
-    console.log(from[[0]], to[[0]]); //logging first value in both indexs
+  // var from = moves[0];
+  // var to = moves[1];
 
-var current = [];
-var counter = 0; //initial start
+    // console.log(from[[0]], to[[0]]); //logging first value in both indexs
+
+// var current = [];
+// var counter = 0; //initial start
 
     //globals is an object. globals.game is assigned a dictionary
   // You don't need to understand `globals` yet...
@@ -135,18 +136,14 @@ var counter = 0; //initial start
 
     applyMove: function(from, to){
 
-      board[to[counter][0]] = board[from[counter][0]];
-      board[from[counter][0]] = ' ';
-      console.log(board.join ('\n' + '|'));
+        moves[0].to = moves[0].from;
+        moves[0].from = null;
 
+        return moves[0].to;
 
+        // console.log(moves[0].to);
+      // console.log(board.join ('\n' + '|'));
 
-      // var current = board[4][3] = board[6][3]; //new position is assigned to from position
-      // var last = board[6][3] = ' '; //from position is assigned to empty string.
-      //
-      // console.log(board.last.join('\n'));
-      // // console.log(current[[0]], to[[0]]);
-      // // console.log(applyMove[[0]][[0]]);
 
 
 
