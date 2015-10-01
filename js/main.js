@@ -28,12 +28,13 @@
     }
 
 
+
     // [ [6,3], [0,6], [6,2], [1,4], [6,6], [1,3], [7,5], [0,5], [7,6] ], //from locations
     // [ [4,3], [2,5], [4,2], [2,4], [5,6], [3,3], [6,6], [1,4], [5,5] ] //to locations
 
   ]; // END moves
 
-
+  var rank = moves[0].value;
   // var from = moves[0];
   // var to = moves[1];
 
@@ -136,12 +137,18 @@
 
     applyMove: function(from, to){
 
-        moves[0].to = moves[0].from;
-        moves[0].from = null;
-        // console.log(moves[0].to);
-      // console.log(board.join ('\n' + '|'));
+      moves[0].to = moves[0].from;
+      moves[0].from = null;
 
         return moves[0].to;
+
+        // board[rank.to][file.to] = board[from.rank][from.file];
+        // board[from.rank][from.file] = null;
+
+        // console.log(moves[0].to);
+      console.log(board.join ('\n' + '|'));
+      return board.join('\n' + '|');
+
 
 
     }// END applyMove
