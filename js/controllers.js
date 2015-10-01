@@ -26,14 +26,13 @@
     // TODO: Tell the Model -- `game` -- to advance to the next move...
       game.applyMove();
     // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
-      $('#D2') = $('#D4');
+
   });
 
   // Controller for "previous move"...
   jQuery('#previous').on('click', function(event){
-      alert('previous move');
-    // TODO: Fire tracer bullet!
-    // TODO: Tell the Model -- `game` -- to advance to the previous move...
+      alert('previous move'); // TODO: Fire tracer bullet!
+      game.reset(); // TODO: Tell the Model -- `game` -- to advance to the previous move...
     // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
   });
 
