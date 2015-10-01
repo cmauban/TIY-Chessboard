@@ -63,10 +63,6 @@ console.log(game.tracer());
     //   return rows.join('\n') + '\n';
     // }
 
-    function applyMove(rows){
-      return rows.join('\n') + '\n';
-    }
-
     chai.expect(game.tracer()).to.equal(toTracer([
       '|R|N|B|Q|K|B|N|R|',
       '|P|P|P|P|P|P|P|P|',
@@ -77,6 +73,8 @@ console.log(game.tracer());
       '|p|p|p| |p|p|p|p|',
       '|r|n|b|q|k|b|n|r|'
   ]));
+
+  console.log(game.tracer(game.applyMove));
 
   }); //END it should move one piece
 
@@ -92,9 +90,9 @@ console.log(game.tracer());
 
   it('should be able to move a different piece', function() {
     //initialize environment
-    game.reset();
+    // game.reset();
     var board = game.board(); //grabs copy of the board
-
+    // var next = game.next();
     // Test the Pre-condition
     chai.expect(board[0][6]).to.equal('N');
     chai.expect(board[2][5]).to.be.null;
@@ -103,23 +101,23 @@ console.log(game.tracer());
       return rows.join('\n') + '\n';
     }
 
-  //   chai.expect(game.tracer()).to.equal(toTracer([
-  //     '|R|N|B|Q|K|B|N|R|',
-  //     '|P|P|P|P|P|P|P|P|',
-  //     '| | | | | | | | |',
-  //     '| | | | | | | | |',
-  //     '| | | | | | | | |',
-  //     '| | | | | | | | |',
-  //     '|p|p|p|p|p|p|p|p|',
-  //     '|r|n|b|q|k|b|n|r|'
-  // ]));
+    chai.expect(game.tracer()).to.equal(toTracer([
+      '|R|N|B|Q|K|B|N|R|',
+      '|P|P|P|P|P|P|P|P|',
+      '| | | | | | | | |',
+      '| | | | | | | | |',
+      '| | | |p| | | | |',
+      '| | | | | | | | |',
+      '|p|p|p| |p|p|p|p|',
+      '|r|n|b|q|k|b|n|r|'
+  ]));
 
-    //for later...
-    // var secondmove = moves[1] = {
-  //     from: {rank: 0, file: 6},
+
+  //   var secondMove = moves[1] =
+  //   chai.expect(game.next(
+  //   { from: {rank: 0, file: 6},
   //     to: {rank:2, file: 5}
-  // }
-
+  // })).to.be(game.next);
 
     //Action to change..
     chai.expect(game.applyMove(
@@ -133,29 +131,33 @@ console.log(game.tracer());
     chai.expect(board[0][6]).to.be.null;
     chai.expect(board[2][5]).to.equal('N');
 
-  //   chai.expect(game.tracer()).to.equal(toTracer([
-  //     '|R|N|B|Q|K|B| |R|',
-  //     '|P|P|P|P|P|P|P|P|',
-  //     '| | | | | |N| | |',
-  //     '| | | | | | | | |',
-  //     '| | | | | | | | |',
-  //     '| | | | | | | | |',
-  //     '|p|p|p|p|p|p|p|p|',
-  //     '|r|n|b|q|k|b|n|r|'
-  // ]));
+    chai.expect(game.tracer()).to.equal(toTracer([
+      '|R|N|B|Q|K|B| |R|',
+      '|P|P|P|P|P|P|P|P|',
+      '| | | | | |N| | |',
+      '| | | | | | | | |',
+      '| | | |p| | | | |',
+      '| | | | | | | | |',
+      '|p|p|p| |p|p|p|p|',
+      '|r|n|b|q|k|b|n|r|'
+  ]));
 
+  console.log(game.tracer(game.applyMove));
 
   });
-  //
-  //
-  // it('should be able to apply the move', function() {
-  //   var board = game.board();
-  //   chai.expect(board).to.be.an('array');
-  //   chai.expect(board[4][3]).to.be.a('string');
-  //   chai.expect(board[4][3]).to.equal('p');
-  // });
 
-    console.log(game.applyMove()); //returns undefined
+
+it('should be able to advance to the next move', function () {
+  game.reset(); //re-initialize the board
+  var board = game.board();
+  // var next = game.next();
+
+  //Pre-conditions
+  chai.expect(next[4][3]).to.be(board[0][6]);
+
+});
+
+
 
 
 // it('should be able to fast forward', function () {

@@ -37,6 +37,7 @@
   ]; // END moves
 
 
+
     // console.log(from[[0]], to[[0]]); //logging first value in both indexs
 
 // var current = [];
@@ -82,6 +83,8 @@
       currentFrom = moves[counter].from;
       currentTo = moves[counter].to;
 
+      game.next(currentFrom, currentTo);
+
       return this;
       }
     },
@@ -117,7 +120,6 @@
       //creates a block of statements
       for ( var rank = 0; rank < board.length; rank++ ){
         console.log(rank, board[rank]);
-        console.log('tracer function bullet');
       }
 
       for ( rank = 0; rank < board.length; rank++ ){
@@ -151,8 +153,13 @@
       // board[2][5] = board[0][6];
       // board[0][6] = null;
 
-      // console.log(board.join ('\n' + '|'));
-      // return board.join('\n' + '|');
+      console.log(game.tracer(game.applyMove));
+    //   var secondMove = moves[1] = {
+    //     from: {rank: 0, file: 6},
+    //     to: {rank:2, file: 5}
+    // };
+
+
 
 
 
