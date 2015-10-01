@@ -11,9 +11,7 @@ console.log(game.tracer());
 
 
   it('should give me a big array as the board', function () {
-
     var board = game.board();
-
     chai.expect(board).to.be.an('array');
     chai.expect(board).to.have.length(8);
     chai.expect(board[0]).to.be.a('array');
@@ -44,9 +42,14 @@ console.log(game.tracer());
 
 
   it('should be able to apply the move', function() {
-    chai.expect(game.board()).to.be.an('array');
-    chai.expect(game.board([4][3])).to.equal('p');
+    var board = game.board();
+    chai.expect(board).to.be.an('array');
+    chai.expect(board[6][3]).to.be.a('string');
+    chai.expect(board[6][3]).to.equal('p');
   });
+
+    console.log(game.applyMove()); //returns from value??? [6,3]
+
 
 // it('should be able to fast forward', function () {
 //   board[0][0] = board[0][1];

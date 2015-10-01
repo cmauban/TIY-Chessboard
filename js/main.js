@@ -138,16 +138,14 @@
 
         moves[0].to = moves[0].from;
         moves[0].from = null;
-
-        return moves[0].to;
-
         // console.log(moves[0].to);
       // console.log(board.join ('\n' + '|'));
 
-
+        return moves[0].to;
 
 
     }// END applyMove
+
   }); // END game
 
   /**
