@@ -21,13 +21,37 @@
    * @see applyMove
    * @var {Array} of...?
    */
+
+  var counter = 0;
+
   var moves = [
 
     { from: { rank: 6, file: 3 },
       to: { rank: 4, file: 3 } },
 
     { from: { rank: 0, file: 6 },
-      to: { rank: 2, file: 5 } }
+      to: { rank: 2, file: 5 } },
+
+    { from: { rank: 6, file: 2 },
+      to: { rank: 4, file: 2 } },
+
+    { from: { rank: 1, file: 4 },
+      to: { rank: 2, file: 4 } },
+
+    { from: { rank: 6, file: 6 },
+      to: { rank: 5, file: 6 } },
+
+    { from: { rank: 1, file: 3 },
+      to: { rank: 3, file: 3 } },
+
+    { from: { rank: 7, file: 5 },
+      to: { rank: 6, file: 6 } },
+
+    { from: { rank: 0, file: 5 },
+      to: { rank: 1, file: 4 } },
+
+    { from: { rank: 7, file: 6 },
+      to: { rank: 5, file: 5 } }
 
   ]; // END moves
 
@@ -70,7 +94,7 @@
      * @todo Make this work!
      */
     next: function(){
-    var counter = 0;
+
     var currentFrom = moves[counter].from;
     var currentTo = moves[counter].to;
 
@@ -79,8 +103,8 @@
 
       game.applyMove(currentFrom, currentTo);
       // console.log(currentTo);
-      return this;
       }
+      return this;
     },
     /**
      * Advance the internal game board to the previous move.
@@ -89,16 +113,15 @@
      * @todo Make this work!
      */
     prev: function(){
-      var counter = 0;
       var currentFrom = moves[counter].from;
       var currentTo = moves[counter].to;
 
-      if (counter > moves.length) {
+      if (counter < moves.length) {
         counter -= 1;
 
         game.applyMove(currentTo, currentFrom);
-      return this;
       }
+      return this;
     },
     /**
      * Advance the internal game board to the last move.
