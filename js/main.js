@@ -24,19 +24,15 @@
   var moves = [
 
     { from: { rank: 6, file: 3 },
-      to: { rank: 4, file: 3 }
-    },
+      to: { rank: 4, file: 3 } },
 
     { from: { rank: 0, file: 6 },
-      to: { rank: 2, file: 5 }
-    }
-
-    // [ [6,3], [0,6], [6,2], [1,4], [6,6], [1,3], [7,5], [0,5], [7,6] ], //from locations
-    // [ [4,3], [2,5], [4,2], [2,4], [5,6], [3,3], [6,6], [1,4], [5,5] ] //to locations
+      to: { rank: 2, file: 5 } }
 
   ]; // END moves
 
-
+  // [ [6,3], [0,6], [6,2], [1,4], [6,6], [1,3], [7,5], [0,5], [7,6] ], //from locations
+  // [ [4,3], [2,5], [4,2], [2,4], [5,6], [3,3], [6,6], [1,4], [5,5] ] //to locations
 
     // console.log(from[[0]], to[[0]]); //logging first value in both indexs
 
@@ -75,16 +71,14 @@
      */
     next: function(){
     var counter = 0;
-    var currentFrom = moves[0].from;
-    var currentTo = moves[0].to;
+    var currentFrom = moves[counter].from;
+    var currentTo = moves[counter].to;
 
     if (counter < moves.length) {
       counter += 1;
-      currentFrom = moves[counter].from;
-      currentTo = moves[counter].to;
 
-      game.next(currentFrom, currentTo);
-
+      game.applyMove(currentFrom, currentTo);
+      // console.log(currentTo);
       return this;
       }
     },
@@ -95,8 +89,16 @@
      * @todo Make this work!
      */
     prev: function(){
-      --counter;
+      var counter = 0;
+      var currentFrom = moves[counter].from;
+      var currentTo = moves[counter].to;
+
+      if (counter > moves.length) {
+        counter -= 1;
+
+        game.applyMove(currentTo, currentFrom);
       return this;
+      }
     },
     /**
      * Advance the internal game board to the last move.
@@ -147,9 +149,13 @@
 
     applyMove: function(from, to){
 
-      board[4][3] = board[6][3];
-      board[6][3] = null;
+      board[to.rank][to.file] = board[from.rank][from.file];
+      board[from.rank][from.file] = null;
 
+
+      // board[4][3] = board[6][3];
+      // board[6][3] = null;
+      //
       // board[2][5] = board[0][6];
       // board[0][6] = null;
 
