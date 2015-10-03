@@ -55,13 +55,6 @@
 
   ]; // END moves
 
-  // [ [6,3], [0,6], [6,2], [1,4], [6,6], [1,3], [7,5], [0,5], [7,6] ], //from locations
-  // [ [4,3], [2,5], [4,2], [2,4], [5,6], [3,3], [6,6], [1,4], [5,5] ] //to locations
-
-    // console.log(from[[0]], to[[0]]); //logging first value in both indexs
-
-// var current = [];
-// var counter = 0; //initial start
 
     //globals is an object. globals.game is assigned a dictionary
   // You don't need to understand `globals` yet...
@@ -133,13 +126,13 @@
      */
     end: function(){
 
-      for (counter = 0; counter <= moves.length; counter++ ){ //iterating through each move
+      for (counter = 0; counter < moves.length; counter++ ){ //iterating through each move
         var currentFrom = moves[counter].from; //applying each from move
         var currentTo = moves[counter].to; //applying each to move
 
         game.applyMove(currentFrom, currentTo); //calling all of the moves
       }
-  
+
       console.log(game.tracer(game.end)); //invokes the end function in the console with button
       return this;
     },
@@ -182,8 +175,8 @@
 
     applyMove: function(from, to){
 
-      board[to.rank][to.file] = board[from.rank][from.file];
-      board[from.rank][from.file] = null;
+      board[to.rank][to.file] = board[from.rank][from.file]; //to is assigned from position
+      board[from.rank][from.file] = null; //from is assigned null
 
       console.log(game.tracer(game.applyMove)); //invokes applyMove in the console with button
 

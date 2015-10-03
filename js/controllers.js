@@ -28,46 +28,51 @@ var gameboard = game.board();
       console.log('next move');
       game.next(); //LOGS/APPLIES NEXT MOVE: Tell the Model -- `game` -- to advance to the next move...
 
-    // jQuery(gameboard).each(function(rank,row){
-    //   jQuery(row).each(function(file, piece){
-    //
-    //   var $square = $chessboard
-    //     .find('tr').eq(rank)
-    //     .find('td').eq(file);
-    //
-    //   // console.log($square.get(),rank,file,piece);
-    //
-    //   if (piece) $square.text(piece);
-    //
-    //   if (piece === 'p') {
-    //     $square.addClass('wppawn');
-    //   }
+      jQuery(gameboard).each(function(rank, row){
+        jQuery(row).each(function(file, piece){
 
-      // $('td:eq(3)').removeClass('wppawn');
+          var $square = $chessboard
+            .find('tr').eq(6) // Get the `tr` inside the `chessboard` for the `rank`
+            .find('td').eq(3);
 
-      // if (piece === 'p') {
-      //   $square.addClass('wppawn');
-      // }
+          var $tosquare = $chessboard
+            .find('tr').eq(4)
+            .find('td').eq(3);
 
-      // if (piece === 'K') {
-      //   $square.addClass('bpknight');
-      // }
+      if (piece === 'p')
+        $square.removeClass('wppawn');
+        $tosquare.addClass('wppawn');
 
 
-      // $('td:eq(6)').removeClass('bpknight');
-      // $square.removeClass('wppawn');
 
-      // if (piece) $square.text(piece)
-      //   .addClass('wppawn'); //convert square to class name
-      //   // $square.removeClass(''); //add names to td instead
-      //
-      // if (piece) $square.get('N');
-      //   $square.addClass('bpknight'); //convert square to class name
-        // $square.removeClass('wppawn'); //add names to td instead
+          var $square = $chessboard
+            .find('tr').eq(0)
+            .find('td').eq(6);
+
+          var $tosquare = $chessboard
+            .find('tr').eq(2)
+            .find('td').eq(5);
+
+      if (piece === 'N')
+        $square.removeClass('bpknight');
+        $tosquare.addClass('bpknight');
+
 
    //
-  //     });
-  //  });
+  //     // $('td:eq(6)').removeClass('bpknight');
+  //     // $square.removeClass('wppawn');
+   //
+  //     // if (piece) $square.text(piece)
+  //     //   .addClass('wppawn'); //convert square to class name
+  //     //   // $square.removeClass(''); //add names to td instead
+  //     //
+  //     // if (piece) $square.get('N');
+  //     //   $square.addClass('bpknight'); //convert square to class name
+  //       // $square.removeClass('wppawn'); //add names to td instead
+   //
+   //
+      });
+   });
 });
      // Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
 
