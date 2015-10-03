@@ -83,8 +83,9 @@
      */
     reset: function(){ //the reset object belongs to the game object
       board = initial(); //just board
-
+      console.log(game.tracer(game.reset)); //invokes the reset in console with button
       return this; //the object the function belongs too (game)
+
 
     },
     /**
@@ -95,15 +96,15 @@
      */
     next: function(){
 
-    var currentFrom = moves[counter].from;
+    var currentFrom = moves[counter].from; //calls the X position from moves
     var currentTo = moves[counter].to;
 
-    if (counter < moves.length) {
-      counter += 1;
-
-      game.applyMove(currentFrom, currentTo);
-      // console.log(currentTo);
-      }
+    if (counter <= moves.length) { //if counter is less than 9 moves
+      counter += 1; //add one to the counter
+      game.applyMove(currentFrom, currentTo); //calls the applyMove
+    } else {
+      counter = moves.length; //stop at last move
+    }
       return this;
     },
     /**
@@ -116,10 +117,11 @@
       var currentFrom = moves[counter].from;
       var currentTo = moves[counter].to;
 
-      if (counter < moves.length) {
+      if (counter >= 0) {
         counter -= 1;
-
         game.applyMove(currentTo, currentFrom);
+      // } else {
+      //   counter = 0;
       }
       return this;
     },
@@ -130,7 +132,15 @@
      * @todo Make this work!
      */
     end: function(){
-      // Write some code here...
+
+      for (counter = 0; counter <= moves.length; counter++ ){ //iterating through each move
+        var currentFrom = moves[counter].from; //applying each from move
+        var currentTo = moves[counter].to; //applying each to move
+
+        game.applyMove(currentFrom, currentTo); //calling all of the moves
+      }
+  
+      console.log(game.tracer(game.end)); //invokes the end function in the console with button
       return this;
     },
     /**
@@ -175,6 +185,7 @@
       board[to.rank][to.file] = board[from.rank][from.file];
       board[from.rank][from.file] = null;
 
+      console.log(game.tracer(game.applyMove)); //invokes applyMove in the console with button
 
       // board[4][3] = board[6][3];
       // board[6][3] = null;
@@ -182,7 +193,6 @@
       // board[2][5] = board[0][6];
       // board[0][6] = null;
 
-      console.log(game.tracer(game.applyMove));
     //   var secondMove = moves[1] = {
     //     from: {rank: 0, file: 6},
     //     to: {rank:2, file: 5}
