@@ -17,26 +17,31 @@
     // Do something with Models and Views...
     // Maybe do something with EVENT...?
   // }
+
+
+
 var $chessboard = $('.chessboard tbody');
 
-var gameboard = game.board();
+var gameboard = game.board(); //representation of the gameboard
 
-var clickCounter = 0;
+var clickCounter = 0; //initializes the click
+
+
 
   // Controller for "next move"...
 jQuery('#next').on('click', function(event){
-
-      console.log('next move');
-      game.next(); //LOGS/APPLIES NEXT MOVE: Tell the Model -- `game` -- to advance to the next move...
+      // console.log('next move');
+      game.next(); // invokes next function. LOGS/APPLIES NEXT MOVE: Tell the Model -- `game` -- to advance to the next move...
       event.preventDefault();
-      // Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
-      clickCounter += 1;
 
-      jQuery(gameboard).each(function(rank, row){
+      // Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
+      clickCounter += 1; //intervals by one
+
+      jQuery(gameboard).each(function(rank, row){ //iterates through gameboard
         jQuery(row).each(function(file, piece){
 
 
-      if (clickCounter === 1) {
+      if (clickCounter === 1) { //on first click..
         $('tr.row-2 td:eq(3)').removeClass('wppawn'); //targets 3rd element from tr.row-2
         $('tr.row-4 td:eq(3)').addClass('wppawn');
       }
@@ -81,27 +86,92 @@ jQuery('#next').on('click', function(event){
         $('tr.row-3 td:eq(5)').addClass('wpknight');
       }
 
+      if (clickCounter >= 9) {
+        clickCounter = 9;
+      }
 
       });
    });
-});
+}); // END NEXT CONTROLLER
+
 
 
 
   // Controller for "previous move"...
 jQuery('#previous').on('click', function(event){
-      console.log('previous move'); // TODO: Fire tracer bullet!
-      game.prev(); // TODO: Tell the Model -- `game` -- to advance to the previous move...
+      // console.log('previous move');
+      game.prev(); // Tell the Model -- `game` -- to advance to the previous move...
 
-    // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
+    //Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
+
+    clickCounter -= 1; //intervals by one
+
+    jQuery(gameboard).each(function(rank, row){ //iterates through gameboard
+      jQuery(row).each(function(file, piece){
+
+
+    if (clickCounter === 0) { //on first click..
+      $('tr.row-2 td:eq(3)').addClass('wppawn'); //targets 3rd element from tr.row-2
+      $('tr.row-4 td:eq(3)').removeClass('wppawn');
+    }
+
+    if (clickCounter === 1) {
+      $('tr.row-8 td:eq(6)').addClass('bpknight');
+      $('tr.row-6 td:eq(5)').removeClass('bpknight');
+    }
+
+    if (clickCounter === 2) {
+      $('tr.row-2 td:eq(2)').addClass('wppawn');
+      $('tr.row-4 td:eq(2)').removeClass('wppawn');
+    }
+
+    if (clickCounter === 3) {
+      $('tr.row-7 td:eq(4)').addClass('bppawn');
+      $('tr.row-6 td:eq(4)').removeClass('bppawn');
+    }
+
+    if (clickCounter === 4) {
+      $('tr.row-2 td:eq(6)').addClass('wppawn');
+      $('tr.row-3 td:eq(6)').removeClass('wppawn');
+    }
+
+    if (clickCounter === 5) {
+      $('tr.row-7 td:eq(3)').addClass('bppawn');
+      $('tr.row-5 td:eq(3)').removeClass('bppawn');
+    }
+
+    if (clickCounter === 6) {
+      $('tr.row-1 td:eq(5)').addClass('wpbishop');
+      $('tr.row-2 td:eq(6)').removeClass('wpbishop');
+    }
+
+    if (clickCounter === 7) {
+      $('tr.row-8 td:eq(5)').addClass('bpbishop');
+      $('tr.row-7 td:eq(4)').removeClass('bpbishop');
+    }
+
+    if (clickCounter === 8) {
+      $('tr.row-1 td:eq(6)').addClass('wpknight');
+      $('tr.row-3 td:eq(5)').removeClass('wpknight');
+    }
+
+    if (clickCounter >= 9) {
+      clickCounter = 9;
+    }
+
+    });
   });
+}); //END PREVIOUS CONTROLLER
+
+
+
 
   // Controller for "fast-forward"...
 jQuery('#fast-forward').on('click', function(event){
       console.log('end game yas!');
       game.end(); //Tell the Model -- `game` -- to advance to the last move...
 
-      // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
+      //Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
       jQuery(gameboard).each(function(rank, row){
         jQuery(row).each(function(file, piece){
 
@@ -150,15 +220,17 @@ jQuery('#fast-forward').on('click', function(event){
             $('tr.row-3 td:eq(5)').addClass('wpknight');
           }
 
-      });
     });
+  });
+}); //END OF FAST-FORWARD CONTROLLER
 
-}); //END OF FAST-FORWARD BUTTON
 
-  // Controller for anything else...
+
+  // Controller for reset
 jQuery('#reset').on('click', function(event){
-      console.log('backward');  // Fire tracer bullet!
+      // console.log('backward');
       game.reset(); // Tell the Model -- `game` -- to do something it knows how to do...
+
       // Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
       jQuery(gameboard).each(function(rank, row){
         jQuery(row).each(function(file, piece){
@@ -208,10 +280,9 @@ jQuery('#reset').on('click', function(event){
             $('tr.row-3 td:eq(5)').removeClass('wpknight');
           }
 
-
     });
   });
-});
+}); //END OF RESET CONTROLLER
 
 // Am I supposed to recognize this?
 })(window || module && module.exports || this);
