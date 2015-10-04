@@ -1,12 +1,11 @@
 ;(function(globals){ // That damn IIFE again!
-// Your code BELOW here...
+
 
   // Because the game board only corresponds to the `tbody` element...
   var $chessboard = jQuery('.chessboard tbody');
   // I always start variable names with `$` when they reference `jQuery.Collection` values
 
   var gameboard = game.board();
-
 
   // You could also use nested `for` loops, but this is better...
   jQuery(gameboard).each(function(rank, row){
@@ -16,14 +15,11 @@
         .find('tr').eq(rank) // Get the `tr` inside the `chessboard` for the `rank`
         .find('td').eq(file); // Get the `td` inside the `tr` for the `file`
 
-      console.log($square.get(), rank, file, piece);
-
-
+      // console.log($square.get(), rank, file, piece);
       // if (piece) $square.text(piece);
-
-
-
-        // Convert `square` to class name(s)
+      // Convert `square` to class name(s)
+      // Add class name(s) to `td` instead
+      // Assigning the string piece to my piece by giivng it a class
 
         if (piece === 'p') {
           $square.addClass('wppawn');
@@ -75,8 +71,6 @@
         } //END BLACK PIECES
 
 
-
-        // TODO: Add class name(s) to `td` instead
     });
   });
 

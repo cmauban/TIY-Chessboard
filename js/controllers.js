@@ -42,8 +42,8 @@ jQuery('#next').on('click', function(event){
 
 
       if (clickCounter === 1) { //on first click..
-        $('tr.row-2 td:eq(3)').removeClass('wppawn'); //targets 3rd element from tr.row-2
-        $('tr.row-4 td:eq(3)').addClass('wppawn');
+        $('tr.row-2 td:eq(3)').removeClass('wppawn'); //targets 3rd element from second row and removes its piece
+        $('tr.row-4 td:eq(3)').addClass('wppawn'); //..and adds the piece to the new position
       }
 
       if (clickCounter === 2) {
@@ -90,8 +90,10 @@ jQuery('#next').on('click', function(event){
         clickCounter = 9;
       }
 
+
+
       });
-   });
+   });  console.log(clickCounter);
 }); // END NEXT CONTROLLER
 
 
@@ -111,8 +113,8 @@ jQuery('#previous').on('click', function(event){
 
 
     if (clickCounter === 0) { //on first click..
-      $('tr.row-2 td:eq(3)').addClass('wppawn'); //targets 3rd element from tr.row-2
-      $('tr.row-4 td:eq(3)').removeClass('wppawn');
+      $('tr.row-2 td:eq(3)').addClass('wppawn'); //targets 3rd element from second row and adds piece
+      $('tr.row-4 td:eq(3)').removeClass('wppawn'); //targets 3rd element from forth row and removes its piece
     }
 
     if (clickCounter === 1) {
@@ -168,14 +170,14 @@ jQuery('#previous').on('click', function(event){
 
   // Controller for "fast-forward"...
 jQuery('#fast-forward').on('click', function(event){
-      console.log('end game yas!');
+      console.log('end game, yas!');
       game.end(); //Tell the Model -- `game` -- to advance to the last move...
 
       //Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
       jQuery(gameboard).each(function(rank, row){
         jQuery(row).each(function(file, piece){
 
-          if (piece === 'p') {
+          if (piece === 'p') { // all pieces moves at once
             $('tr.row-2 td:eq(3)').removeClass('wppawn');
             $('tr.row-4 td:eq(3)').addClass('wppawn');
           }
@@ -235,7 +237,7 @@ jQuery('#reset').on('click', function(event){
       jQuery(gameboard).each(function(rank, row){
         jQuery(row).each(function(file, piece){
 
-          if (piece === 'p') {
+          if (piece === 'p') { // all pieces move back to initial position at once
             $('tr.row-4 td:eq(3)').removeClass('wppawn');
             $('tr.row-2 td:eq(3)').addClass('wppawn');
           }

@@ -22,7 +22,7 @@
    * @var {Array} of...?
    */
 
-  var counter = 0;
+  var counter = 0; //initialize the moves
 
   var moves = [
 
@@ -56,8 +56,7 @@
   ]; // END moves
 
 
-    //globals is an object. globals.game is assigned a dictionary
-  // You don't need to understand `globals` yet...
+  //globals is an object. globals.game is assigned a dictionary
   var game = (globals.game = {
     /**
      * Provide a _copy_ of the game board in order to update the View from it
@@ -78,8 +77,6 @@
       board = initial(); //just board
       console.log(game.tracer(game.reset)); //invokes the reset in console with button
       return this; //the object the function belongs too (game)
-
-
     },
     /**
      * Advance the internal game board to the next move.
@@ -89,17 +86,20 @@
      */
     next: function(){
 
-    var currentFrom = moves[counter].from; //calls the X position from moves
+    var currentFrom = moves[counter].from; //assigns currentFrom to the current position of 'from' moves
     var currentTo = moves[counter].to;
 
     if (counter <= moves.length) { //if counter is less than 9 moves
       counter += 1; //add one to the counter
-      game.applyMove(currentFrom, currentTo); //calls the applyMove
+      game.applyMove(currentFrom, currentTo); //calls the applyMove function
     } else {
-      counter = moves.length; //stop at last move
+      counter = 9; //stop at last move
     }
       return this;
     },
+
+
+
     /**
      * Advance the internal game board to the previous move.
      *
@@ -107,14 +107,14 @@
      * @todo Make this work!
      */
     prev: function(){
-      var currentFrom = moves[counter].from;
+      var currentFrom = moves[counter].from; //assigns currentFrom to the current position of from moves
       var currentTo = moves[counter].to;
 
-      if (counter >= 0) {
-        counter -= 1;
+      if (counter >= 0) { //if counter is greater or less than 0..
+        counter -= 1; // go back one move
         game.applyMove(currentTo, currentFrom);
-      // } else {
-      //   counter = 0;
+      } else {
+        counter = 0;
       }
       return this;
     },
@@ -127,8 +127,8 @@
     end: function(){
 
       for (counter = 0; counter < moves.length; counter++ ){ //iterating through each move
-        var currentFrom = moves[counter].from; //applying each from move
-        var currentTo = moves[counter].to; //applying each to move
+        var currentFrom = moves[counter].from; //applying each 'from' move
+        var currentTo = moves[counter].to; //applying each 'to' move
 
         game.applyMove(currentFrom, currentTo); //calling all of the moves
       }
@@ -178,22 +178,13 @@
       board[to.rank][to.file] = board[from.rank][from.file]; //to is assigned from position
       board[from.rank][from.file] = null; //from is assigned null
 
-      console.log(game.tracer(game.applyMove)); //invokes applyMove in the console with button
+      console.log(game.tracer(game.applyMove)); //invokes applyMove. in the console with controller
 
       // board[4][3] = board[6][3];
       // board[6][3] = null;
       //
       // board[2][5] = board[0][6];
       // board[0][6] = null;
-
-    //   var secondMove = moves[1] = {
-    //     from: {rank: 0, file: 6},
-    //     to: {rank:2, file: 5}
-    // };
-
-
-
-
 
     }// END applyMove
 
