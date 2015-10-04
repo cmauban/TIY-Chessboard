@@ -21,9 +21,6 @@ var $chessboard = $('.chessboard tbody');
 
 var gameboard = game.board();
 
-var counter = 0;
-// var piece = $('')
-
   // Controller for "next move"...
   jQuery('#next').on('click', function(event){
 
@@ -32,61 +29,66 @@ var counter = 0;
       game.next(); //LOGS/APPLIES NEXT MOVE: Tell the Model -- `game` -- to advance to the next move...
 
 
+    // $('#next').once('click', function(){
+    //   event.preventDefault();
       jQuery(gameboard).each(function(rank, row){
         jQuery(row).each(function(file, piece){
-          event.preventDefault();
-          counter ++;
+          // var move = this.move; //current element in the loop.
 
+      var clicks = 0;
 
-      // $(this).after(++count);
+      if (clicks <= 2) {
+        clicks += 1;
+        $(this).show();
 
-      if (piece === 'p') {
-        $('td.oneF').removeClass('wppawn');
-        $('td.oneT').addClass('wppawn');
+      if (clicks == 1 && piece === 'p') {
+        $('tr.row-2 td:eq(3)').removeClass('wppawn'); //targets 3rd element from tr.row-2
+        $('tr.row-4 td:eq(3)').addClass('wppawn');
       }
 
-      if (piece === 'N') {
-        $('td.twoF').removeClass('bpknight');
-        $('td.twoT').addClass('bpknight');
+      if (clicks == 2 && piece=== 'N') {
+        $('tr.row-8 td:eq(6)').removeClass('bpknight');
+        $('tr.row-6 td:eq(5)').addClass('bpknight');
+
       }
+      return;
+} //end of dummy
+      // if (piece === 'p') {
+      //   $('tr.row-2 td:eq(2)').removeClass('wppawn');
+      //   $('tr.row-4 td:eq(2)').addClass('wppawn');
+      // }
+      //
+      // if (piece === 'P') {
+      //   $('tr.row-7 td:eq(4)').removeClass('bppawn');
+      //   $('tr.row-6 td:eq(4)').addClass('bppawn');
+      // }
+      //
+      // if (piece === 'p') {
+      //   $('tr.row-2 td:eq(6)').removeClass('wppawn');
+      //   $('tr.row-3 td:eq(6)').addClass('wppawn');
+      // }
+      //
+      // if (piece === 'P') {
+      //   $('tr.row-7 td:eq(3)').removeClass('bppawn');
+      //   $('tr.row-5 td:eq(3)').addClass('bppawn');
+      // }
+      //
+      // if (piece === 'b') {
+      //   $('tr.row-1 td:eq(5)').removeClass('wpbishop');
+      //   $('tr.row-2 td:eq(6)').addClass('wpbishop');
+      // }
+      //
+      // if (piece === 'B') {
+      //   $('tr.row-8 td:eq(5)').removeClass('bpbishop');
+      //   $('tr.row-7 td:eq(4)').addClass('bpbishop');
+      // }
+      //
+      // if (piece === 'n') {
+      //   $('tr.row-1 td:eq(6)').removeClass('wpknight');
+      //   $('tr.row-3 td:eq(5)').addClass('wpknight');
+      // }
 
-      if (piece === 'p') {
-        $('td.threeF').removeClass('wppawn');
-        $('td.threeT').addClass('wppawn');
-      }
-
-      if (piece === 'P') {
-        $('td.fourF').removeClass('bppawn');
-        $('td.fourT').addClass('bppawn');
-      }
-
-      if (piece === 'p') {
-        $('td.fiveF').removeClass('wppawn');
-        $('td.fiveT').addClass('wppawn');
-      }
-
-      if (piece === 'P') {
-        $('td.sixF').removeClass('bppawn');
-        $('td.sixT').addClass('bppawn');
-      }
-
-      if (piece === 'b') {
-        $('td.sevenF').removeClass('wpbishop');
-        $('td.sevenT').addClass('wpbishop');
-      }
-
-      if (piece === 'B') {
-        $('td.eightF').removeClass('bpbishop');
-        $('td.eightT').addClass('bpbishop');
-      }
-
-      if (piece === 'n') {
-        $('td.nineF').removeClass('wpknight');
-        $('td.nineT').addClass('wpknight');
-      }
-
-
-
+    // }); //END .ONE FUNCTION
       });
    });
 });
@@ -104,19 +106,78 @@ var counter = 0;
   // Controller for "fast-forward"...
   jQuery('#fast-forward').on('click', function(event){
       console.log('end game yas!');
-      game.end();
-    // TODO: Tell the Model -- `game` -- to advance to the last move...
-    // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
-  });
+      game.end(); //Tell the Model -- `game` -- to advance to the last move...
+
+      // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
+      jQuery(gameboard).each(function(rank, row){
+        jQuery(row).each(function(file, piece){
+
+          if (piece === 'p') {
+            $('tr.row-2 td:eq(3)').removeClass('wppawn');
+            $('tr.row-4 td:eq(3)').addClass('wppawn');
+          }
+
+          if (piece === 'N') {
+            $('tr.row-8 td:eq(6)').removeClass('bpknight');
+            $('tr.row-6 td:eq(5)').addClass('bpknight');
+          }
+
+          if (piece === 'p') {
+            $('tr.row-2 td:eq(2)').removeClass('wppawn');
+            $('tr.row-4 td:eq(2)').addClass('wppawn');
+          }
+
+          if (piece === 'P') {
+            $('tr.row-7 td:eq(4)').removeClass('bppawn');
+            $('tr.row-6 td:eq(4)').addClass('bppawn');
+          }
+
+          if (piece === 'p') {
+            $('tr.row-2 td:eq(6)').removeClass('wppawn');
+            $('tr.row-3 td:eq(6)').addClass('wppawn');
+          }
+
+          if (piece === 'P') {
+            $('tr.row-7 td:eq(3)').removeClass('bppawn');
+            $('tr.row-5 td:eq(3)').addClass('bppawn');
+          }
+
+          if (piece === 'b') {
+            $('tr.row-1 td:eq(5)').removeClass('wpbishop');
+            $('tr.row-2 td:eq(6)').addClass('wpbishop');
+          }
+
+          if (piece === 'B') {
+            $('tr.row-8 td:eq(5)').removeClass('bpbishop');
+            $('tr.row-7 td:eq(4)').addClass('bpbishop');
+          }
+
+          if (piece === 'n') {
+            $('tr.row-1 td:eq(6)').removeClass('wpknight');
+            $('tr.row-3 td:eq(5)').addClass('wpknight');
+          }
+
+      });
+    });
+
+}); //END OF FAST-FORWARD BUTTON
 
   // Controller for anything else...
   jQuery('#reset').on('click', function(event){
       console.log('backward');  // Fire tracer bullet!
-      game.reset();
-        // $chessboard.reset(); // TODO: Tell the Model -- `game` -- to do something it knows how to do...
+      game.reset(); // Tell the Model -- `game` -- to do something it knows how to do...
 
-    // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
-  });
+      jQuery(gameboard).each(function(rank, row){
+        jQuery(row).each(function(file, piece){
+
+          if (counter === 8){
+            return initial;
+          }
+
+
+    });
+  });    // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
+});
 
 // Am I supposed to recognize this?
 })(window || module && module.exports || this);
