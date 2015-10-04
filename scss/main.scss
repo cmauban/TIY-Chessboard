@@ -96,7 +96,8 @@ textarea {
    ========================================================================== */
 
    .container {
-     margin: 0 10%;
+     margin-left: 15%;
+     margin-right: 15%;
      width: auto; }
 
    .chessboard {
@@ -112,6 +113,7 @@ textarea {
 
    tbody td {
      position: relative;
+     background: #DBDBDB;
 
           &::before {
            text-align: center;
@@ -140,22 +142,13 @@ textarea {
       }
    }
 
-  //  .row-8, .row-7, .row-6, .row-5, .row-4, .row-3, .row-2, .row-1 {
-  //    height: 80px;
-  //    text-align: center;
-  //  }
+ tbody tr:nth-child(even) td:nth-child(even) {
+   background-color: #72579C;
+}
 
-   .light, .dark {
-    //  width: 80px;
-   }
-
-   .light {
-     background: #DBDBDB;
-   }
-
-   .dark {
-     background: #72579C;
-   }
+ tbody tr:nth-child(odd) td:nth-child(odd) {
+   background-color: #72579C;
+ }
 
 
 

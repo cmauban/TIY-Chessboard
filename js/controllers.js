@@ -21,56 +21,72 @@ var $chessboard = $('.chessboard tbody');
 
 var gameboard = game.board();
 
+var counter = 0;
 // var piece = $('')
 
   // Controller for "next move"...
   jQuery('#next').on('click', function(event){
+
+
       console.log('next move');
       game.next(); //LOGS/APPLIES NEXT MOVE: Tell the Model -- `game` -- to advance to the next move...
 
+
       jQuery(gameboard).each(function(rank, row){
         jQuery(row).each(function(file, piece){
-
-          var $square = $chessboard
-            .find('tr').eq(6) // Get the `tr` inside the `chessboard` for the `rank`
-            .find('td').eq(3);
-
-          var $tosquare = $chessboard
-            .find('tr').eq(4)
-            .find('td').eq(3);
-
-      if (piece === 'p')
-        $square.removeClass('wppawn');
-        $tosquare.addClass('wppawn');
+          event.preventDefault();
+          counter ++;
 
 
+      // $(this).after(++count);
 
-          var $square = $chessboard
-            .find('tr').eq(0)
-            .find('td').eq(6);
+      if (piece === 'p') {
+        $('td.oneF').removeClass('wppawn');
+        $('td.oneT').addClass('wppawn');
+      }
 
-          var $tosquare = $chessboard
-            .find('tr').eq(2)
-            .find('td').eq(5);
+      if (piece === 'N') {
+        $('td.twoF').removeClass('bpknight');
+        $('td.twoT').addClass('bpknight');
+      }
 
-      if (piece === 'N')
-        $square.removeClass('bpknight');
-        $tosquare.addClass('bpknight');
+      if (piece === 'p') {
+        $('td.threeF').removeClass('wppawn');
+        $('td.threeT').addClass('wppawn');
+      }
+
+      if (piece === 'P') {
+        $('td.fourF').removeClass('bppawn');
+        $('td.fourT').addClass('bppawn');
+      }
+
+      if (piece === 'p') {
+        $('td.fiveF').removeClass('wppawn');
+        $('td.fiveT').addClass('wppawn');
+      }
+
+      if (piece === 'P') {
+        $('td.sixF').removeClass('bppawn');
+        $('td.sixT').addClass('bppawn');
+      }
+
+      if (piece === 'b') {
+        $('td.sevenF').removeClass('wpbishop');
+        $('td.sevenT').addClass('wpbishop');
+      }
+
+      if (piece === 'B') {
+        $('td.eightF').removeClass('bpbishop');
+        $('td.eightT').addClass('bpbishop');
+      }
+
+      if (piece === 'n') {
+        $('td.nineF').removeClass('wpknight');
+        $('td.nineT').addClass('wpknight');
+      }
 
 
-   //
-  //     // $('td:eq(6)').removeClass('bpknight');
-  //     // $square.removeClass('wppawn');
-   //
-  //     // if (piece) $square.text(piece)
-  //     //   .addClass('wppawn'); //convert square to class name
-  //     //   // $square.removeClass(''); //add names to td instead
-  //     //
-  //     // if (piece) $square.get('N');
-  //     //   $square.addClass('bpknight'); //convert square to class name
-  //       // $square.removeClass('wppawn'); //add names to td instead
-   //
-   //
+
       });
    });
 });
@@ -97,7 +113,7 @@ var gameboard = game.board();
   jQuery('#reset').on('click', function(event){
       console.log('backward');  // Fire tracer bullet!
       game.reset();
-        // chessboard.reset(); // TODO: Tell the Model -- `game` -- to do something it knows how to do...
+        // $chessboard.reset(); // TODO: Tell the Model -- `game` -- to do something it knows how to do...
 
     // TODO: Tell the View -- `.chessboard` -- to update the position of the pieces based on `game.board()`
   });

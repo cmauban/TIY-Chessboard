@@ -147,7 +147,7 @@
       var bullet = '';
       //creates a block of statements
       for ( var rank = 0; rank < board.length; rank++ ){
-        console.log(rank, board[rank]);
+        // console.log(rank, board[rank]);
       }
 
       for ( rank = 0; rank < board.length; rank++ ){
