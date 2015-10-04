@@ -95,7 +95,7 @@
     } else {
       counter = 9; //stop at last move
     }
-      return this;
+      return this; //returns current object
     },
 
 
@@ -112,11 +112,11 @@
 
       if (counter >= 0) { //if counter is greater or less than 0..
         counter -= 1; // go back one move
-        game.applyMove(currentTo, currentFrom);
+        game.applyMove(currentTo, currentFrom); //calls the apply move function
       } else {
         counter = 0;
       }
-      return this;
+      return this; //returns current object
     },
     /**
      * Advance the internal game board to the last move.
