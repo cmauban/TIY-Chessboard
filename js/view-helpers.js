@@ -8,7 +8,7 @@
   var gameboard = game.board();
 
   // You could also use nested `for` loops, but this is better...
-  jQuery(gameboard).each(function(rank, row){
+  jQuery(gameboard).each(function(rank, row){ // row is.. gameboard[rank];
     jQuery(row).each(function(file, piece){
       // http://stackoverflow.com/questions/1442925/how-to-get-nth-jquery-element
       var $square = $chessboard
@@ -21,6 +21,14 @@
       // Add class name(s) to `td` instead
       // Assigning the string piece to my piece by giivng it a class
 
+      // $square.addClass()
+      // REFACTOR IN ITS OWN FUNCTION
+
+// @ param (string) piece one of the short-hand chess pieces, upper or lower-case
+// @ return (string) css class name to apply to the corresponding elements
+
+  // function toClassName (piece) {
+       // var pieces = 
         if (piece === 'p') {
           $square.addClass('wppawn');
         }
@@ -70,9 +78,8 @@
           $square.addClass('bpking');
         } //END BLACK PIECES
 
-
-    });
-  });
+    }); // END ROW.EACH
+  }); // END GAMEBOARD.EACH
 
 // Don't go breaking my IIFE...
 })(window || module && module.exports || this);

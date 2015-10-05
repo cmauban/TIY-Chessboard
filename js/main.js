@@ -75,7 +75,7 @@
      */
     reset: function(){ //the reset object belongs to the game object
       board = initial(); //just board
-      console.log(game.tracer(game.reset)); //invokes the reset in console with button
+      console.log(game.tracer()); //invokes the reset in console with button
       return this; //the object the function belongs too (game)
     },
     /**
@@ -133,7 +133,7 @@
         game.applyMove(currentFrom, currentTo); //calling all of the moves
       }
 
-      console.log(game.tracer(game.end)); //invokes the end function in the console with button
+      console.log(game.tracer()); //invokes the end function in the console with button
       return this;
     },
     /**
