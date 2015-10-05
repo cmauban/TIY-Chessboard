@@ -10,167 +10,156 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
+        <!-- <link rel="stylesheet" href="css/normalize.css"> -->
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
 
-      <tbody>
+
+     <main class="container">
       <table class="chessboard">
-        <section>
+        <thead>
         <tr class="border"> <!---TOP BORDER ROW---->
-          <td bgcolor="#707070" width="40"></td>
-          <td>A</td>
-          <td>B</td>
-          <td>C</td>
-          <td>D</td>
-          <td>E</td>
-          <td>F</td>
-          <td>G</td>
-          <td>H</td>
-          <td bgcolor="#707070" width="40"></td>
+          <td></td>
+          <th>A</th>
+          <th>B</th>
+          <th>C</th>
+          <th>D</th>
+          <th>E</th>
+          <th>F</th>
+          <th>G</th>
+          <th>H</th>
+          <td></td>
         </tr>
-      </section>
-      <section class="board">
-        <tr class="row-8"> <!---ROW 8 OF CHESSBOARD---->
-          <td bgcolor="#707070">8</td>
-          <td id="A8" class="light bprook"></td>
-          <td id="B8" class="dark bpknight"></td>
-          <td id="C8" class="light bpbishop"></td>
-          <td id="D8" class="dark bpqueen"></td>
-          <td id="E8" class="light bpking"></td>
-          <td id="F8" class="dark bpbishop"></td>
-          <td id="G8" class="light bpknight"></td>
-          <td id="H8" class="dark bprook"></td>
-          <td bgcolor="#707070" width="40">8</td>
-        </tr>
-      </section>
-      <section class="board">
-        <tr class="row-7"> <!---ROW 7---->
-          <td bgcolor="#707070">7</td>
-          <td id="A7" class="dark bppawn"></td>
-          <td id="B7" class="light bppawn"></td>
-          <td id="C7" class="dark bppawn"></td>
-          <td id="D7" class="light bppawn"></td>
-          <td id="E7" class="dark bppawn"></td>
-          <td id="F7" class="light bppawn"></td>
-          <td id="G7" class="dark bppawn"></td>
-          <td id="H7" class="light bppawn"></td>
-          <td bgcolor="#707070" width="40">7</td>
-        </tr>
-      </section>
-      <section class="board">
-        <tr class="row-6"> <!---ROW 6 OF CHESSBOARD---->
-          <td bgcolor="#707070">6</td>
-          <td id="A6" class="light"></td>
-          <td id="B6" class="dark"></td>
-          <td id="C6" class="light"></td>
-          <td id="D6" class="dark"></td>
-          <td id="E6" class="light"></td>
-          <td id="F6" class="dark"></td>
-          <td id="G6" class="light"></td>
-          <td id="H6" class="dark"></td>
-          <td bgcolor="#707070" width="40">6</td>
-        </tr>
-        </section>
-        <section class="board">
-        <tr class="row-5">
-          <td bgcolor="#707070">5</td>
-          <td id="A5" class="dark"></td>
-          <td id="B5"class="light"></td>
-          <td id="C5" class="dark"></td>
-          <td id="D5" class="light"></td>
-          <td id="E5" class="dark"></td>
-          <td id="F5" class="light"></td>
-          <td id="G5" class="dark"></td>
-          <td id="H5" class="light"></td>
-          <td bgcolor="#707070" width="40">5</td>
-        </tr>
-        </section>
-        <section class="board">
-        <tr class="row-4">
-          <td bgcolor="#707070">4</td>
-          <td id="A4" class="light"></td>
-          <td id="B4" class="dark"></td>
-          <td id="C4" class="light"></td>
-          <td id="D4" class="dark"></td>
-          <td id="E4" class="light"></td>
-          <td id="F4" class="dark"></td>
-          <td id="G4" class="light"></td>
-          <td id="H4" class="dark"></td>
-          <td bgcolor="#707070" width="40">4</td>
-        </tr>
-        </section>
-        <section class="board">
-        <tr class="row-3">
-          <td bgcolor="#707070">3</td>
-          <td id="A3" class="dark"></td>
-          <td id="B3" class="light"></td>
-          <td id="C3" class="dark"></td>
-          <td id="D3" class="light"></td>
-          <td id="E3" class="dark"></td>
-          <td id="F3" class="light"></td>
-          <td id="G3" class="dark"></td>
-          <td id="H3" class="light"></td>
-          <td bgcolor="#707070" width="40">3</td>
-        </tr>
-        </section>
-        <section class="board">
-        <tr class="row-2">
-          <td bgcolor="#707070">2</td>
-          <td id="A2" class="light wppawn"></td>
-          <td id="B2" class="dark wppawn"></td>
-          <td id="C2" class="light wppawn"></td>
-          <td id="D2" class="dark wppawn"></td>
-          <td id="E2" class="light wppawn"></td>
-          <td id="F2" class="dark wppawn"></td>
-          <td id="G2" class="light wppawn"></td>
-          <td id="H2" class="dark wppawn"></td>
-          <td bgcolor="#707070" width="40">2</td>
-        </tr>
-        </section>
-        <section class="board">
-        <tr class="row-1">
-          <td bgcolor="#707070">1</td>
-          <td id="A1" class="dark wprook"></td>
-          <td id="B1" class="light wpknight"></td>
-          <td id="C1" class="dark wpbishop"></td>
-          <td id="D1" class="light wpking"></td>
-          <td id="E1" class="dark wpqueen"></td>
-          <td id="F1" class="light wpbishop"></td>
-          <td id="G1" class="dark wpknight"></td>
-          <td id="H1" class="light wprook"></td>
-          <td bgcolor="#707070" width="40">1</td>
-        </tr>
-        </section>
+      </thead>
+      <tfoot>
         <tr class="border"> <!---BOTTOM BORDER ROW---->
-          <td bgcolor="#707070"></td>
-          <td>A</td>
-          <td>B</td>
-          <td>C</td>
-          <td>D</td>
-          <td>E</td>
-          <td>F</td>
-          <td>G</td>
-          <td>H</td>
-          <td bgcolor="#707070" width="40"></td>
+          <td></td>
+          <th>A</th>
+          <th>B</th>
+          <th>C</th>
+          <th>D</th>
+          <th>E</th>
+          <th>F</th>
+          <th>G</th>
+          <th>H</th>
+          <td></td>
         </tr>
+      </tfoot>
+        <tbody>
+        <tr class="row-8"> <!---ROW 8 OF CHESSBOARD---->
+          <th>8</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <th>8</th>
+        </tr>
+        <tr class="row-7"> <!---ROW 7---->
+          <th>7</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <th>7</th>
+        </tr>
+        <tr class="row-6"> <!---ROW 6 OF CHESSBOARD---->
+          <th>6</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <th>6</th>
+        </tr>
+        <tr class="row-5">
+          <th>5</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <th>5</th>
+        </tr>
+        <tr class="row-4">
+          <th>4</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <th>4</th>
+        </tr>
+        <tr class="row-3">
+          <th>3</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <th>3</th>
+        </tr>
+        <tr class="row-2">
+          <th>2</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <th>2</th>
+        </tr>
+        <tr class="row-1">
+          <th>1</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <th>1</th>
+        </tr>
+
       </tbody>
-
-        <tfoot>
-          <section class="buttons">
-          <button id="reset"><i class="fa fa-backward"></i></button>
-          <button id="previous"><i class="fa fa-step-backward"></i></button>
-          <button id="play/pause"><i class="fa fa-play"></i></button>
-          <button id="next"><i class="fa fa-step-forward"></i></button>
-          <button id="fast-forward"><i class="fa fa-fast-forward"></i></button>
-        </section>
-        </tfoot>
-
-
       </table>
 
+        <nav class="buttons">
+          <button id="reset"><i class="fa fa-backward"></i></button>
+          <button id="previous"><i class="fa fa-step-backward"></i></button>
+          <button id="play-pause"><i class="fa fa-play"></i></button>
+          <button id="next"><i class="fa fa-step-forward"></i></button>
+          <button id="fast-forward"><i class="fa fa-fast-forward"></i></button>
+        </nav>
+
+
+
+
+    </main> <!---END OF CONTAINER--->
 
 
 
@@ -179,11 +168,12 @@
 
 
 
-        <script src="https://aja .googleapis.com/aja /libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- <script src="https://aja .googleapis.com/aja /libs/jquery/1.11.3/jquery.min.js"></script> -->
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script src="js/controllers.js"></script>
+        <script src="js/view-helpers.js"></script>
 
 
         <!-- Google Analytics: change UA-     -  to be your site's ID. -->
